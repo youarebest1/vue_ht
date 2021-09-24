@@ -1,4 +1,4 @@
-<template>
+aster<template>
   <div class="login">
     <div class="login_box">
       <!-- 头像区域 -->
