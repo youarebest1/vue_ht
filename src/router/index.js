@@ -11,17 +11,25 @@ const router = new VueRouter({
     },
     {
       path: '/login', //登录页面
-      component: () => import('../components/login.vue'),
-      meta: {
-        footShow: true
-      }
+      component: () => import('../components/login.vue')
     },
     {
       path: '/home', //首页
       component: () => import('../views/home'),
-      meta: {
-        footShow: true
-      }
+      children: [
+        {
+          path: '/home', //路由重定向（设置默认地址）
+          redirect: '/welcome'
+        },
+        {
+          path: '/welcome',
+          component: () => import('../views/home/welcome.vue')
+        },
+        {
+          path: '/users',
+          component: () => import('../views/home/users.vue')
+        }
+      ]
     }
   ]
 })

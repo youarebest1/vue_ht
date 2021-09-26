@@ -84,9 +84,6 @@ export default {
               console.log(res);
               if(res.meta.status!==200){
                  this.$message.error(res.meta.msg);  
-                   window.sessionStorage.setItem("token","123456");
-                  this.$router.push("/home")
-
                  //失败消息弹窗
               }else{
                   window.sessionStorage.setItem("token",res.data.token);
